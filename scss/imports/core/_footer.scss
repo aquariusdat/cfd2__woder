@@ -1,0 +1,42 @@
+// footer {
+// 	@include desktop {
+		
+// 	}
+// 	@include tablet {
+		
+// 	}
+// 	@include mobile {
+		
+// 	}
+// 	@include mobile-xxs {
+		
+// 	}
+// }
+
+footer{
+	background:black;
+	
+	.container{
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+		span{
+			display:block;
+			font-size:12px;
+			line-height: 21px;
+			letter-spacing: 0.05em;
+			color:#b0b0b0;
+			
+		}
+		img{
+			cursor: pointer;
+		}
+		a{
+			font-size: 12px;
+			line-height: 83.5px;
+			letter-spacing: 0.05em;
+			color:#b0b0b0;
+			text-decoration: none;
+		}
+	}
+}

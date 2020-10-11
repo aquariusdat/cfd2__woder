@@ -1,0 +1,106 @@
+.textbox{
+    
+    h2{
+        font-size:40px;
+        line-height: 83.33px;
+        letter-spacing: 0.07em;
+        font-weight: bold;
+        color:black;        
+    }    
+    p{
+        
+        font-size:16px;
+        line-height: 22px;
+        letter-spacing: 0.025em;
+        color:#464646;
+    }
+    a{
+        margin-top:36px;
+        display:block;
+        text-decoration: none;
+        font-size:14px;
+        font-weight: bold;
+        width: 155px;
+        letter-spacing: 0.2em;
+        line-height: 58.33px;
+        color:black;
+        position: relative;
+        &:hover{
+            img{
+                transform:translate(30%,-50%);
+                transition: all .2s cubic-bezier(.68,.19,.02,.63);
+            }
+        }
+        &::after{       
+            position: absolute;
+            bottom:25%;    
+            border-style: solid;
+            border-width: 1px;            
+            display:block;
+            content:"";
+            width: 38px;
+            color: #bea67c;
+            background-color: #bea67c;
+        }
+        img{
+            transform: translate(0,-50%);
+            transition: all .2s cubic-bezier(.68,.19,.02,.63);
+        }
+        &:nth-child(2){
+            float:right;
+        }
+    }
+}
+.container{
+    width:1010px;
+    margin:auto;
+}
+.container-fluid{
+    padding:0 15px;
+    margin:auto;
+}
+
+@font-face {
+    font-family: 'pe';
+    src: url('/font/ProximaNovaA-Extrabld.woff2') format('woff2'),
+        url('/font/ProximaNovaA-Extrabld.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'pr';
+    src: url('/font/ProximaNova-Regular.woff2') format('woff2'),
+        url('/font/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'pb';
+    src: url('/font/ProximaNova-Bold.woff2') format('woff2'),
+        url('/font/ProximaNova-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face{
+    font-family: 'Proxima Nova';
+    src: url(/font/Proxima-Nova-Regular.otf),
+        url(/font/Proxima-Nova-Alt-Extrabold.otf),
+        url(/font/Proxima-Nova-Bold.otf);
+    
+}
+@keyframes scrollslider{
+    from{
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(50%);
+        opacity: 1;
+    }
+}
