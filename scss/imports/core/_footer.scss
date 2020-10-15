@@ -15,7 +15,7 @@
 
 footer{
 	background:black;
-	
+	font-family: 'pr';
 	.container{
 		display:flex;
 		justify-content: space-between;
@@ -40,3 +40,21 @@ footer{
 		}
 	}
 }
+	@include mobile {
+		footer{
+			.container{
+				display:flex;
+				flex-direction: column-reverse;
+				align-items: center;
+				span{
+					padding: 10px 0;
+				}
+				img{
+					padding:10px 0;
+				}
+				a{
+					line-height: 65px;
+				}
+			}
+		}
+	}
