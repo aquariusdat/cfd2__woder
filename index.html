@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
+        <header id="header">
             <div class="container-fluid">
                 <div class="header__logo">
                     <a href="#" class="header__logo-link">
@@ -51,10 +51,10 @@
                             <a href="#" class="">NEWS</a>
                         </li>         
                     </ul>
-                    <label for="showmenu">
+                    <div class="btnCloseMenu">
                         <span></span>
                         <span></span>
-                    </label>
+                    </div>
                 </div>
 
                 <div class="header__lang">
@@ -71,14 +71,17 @@
                             <div class="section__item">
                                 <span>KR</span>
                             </div>
+                            <div class="section__item">
+                                <span>EN</span>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="hamburger">
                         
-                        <label for="showmenu">
+                        <div class="btnShowMenu">
                             <span></span>
-                        </label>
+                        </div>
                         
                     </div>
                 </div>
@@ -87,27 +90,27 @@
         <main>
                 <div class="slider">
                     <div class="slider__list">
-                        <div class="slider__item">
+                        <div class="slider__item active">
                             <img class="slider__item-img" src="/img/slider1.jpg" alt="">
                             <div class="text">
                                 <h2>WOODER</h2>
                                 <a href="#"><span>LEARN MORE</span> <img src="/img/arrow-leanmore.png" alt=""></a>
                             </div>
                         </div>
-                        <!-- <div class="slider__item">
-                            <img src="/img/slider1.jpg" alt="">
+                        <div class="slider__item">
+                            <img class="slider__item-img" src="/img/slider1.jpg" alt="">
                             <div class="text">
-                                <h2>WOODER</h2>
-                                <a href="#">LEARN MORE <img src="/img/arrow-right.png" alt=""></a>
+                                <h2>WOODER 2</h2>
+                                <a href="#"><span>LEARN MORE</span> <img src="/img/arrow-leanmore.png" alt=""></a>
                             </div>
                         </div>
                         <div class="slider__item">
-                            <img src="/img/slider1.jpg" alt="">
+                            <img class="slider__item-img" src="/img/slider1.jpg" alt="">
                             <div class="text">
-                                <h2>WOODER</h2>
-                                <a href="#">LEARN MORE <img src="/img/arrow-right.png" alt=""></a>
+                                <h2>WOODER 3</h2>
+                                <a href="#"><span>LEARN MORE</span> <img src="/img/arrow-leanmore.png" alt=""></a>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
 
                     <div class="slider__bottom">
@@ -118,8 +121,7 @@
                                 </p>
                                 <div class="dot">
                                     <ul>
-                                        <li></li>
-                                        <li></li>
+                                        <li class="active"></li>
                                         <li></li>
                                         <li></li>
                                     </ul>
@@ -130,8 +132,8 @@
                                 <img src="/img/line.png" alt="" class="scroll__line">
                             </div>
                             <div class="control">
-                                <a href="#" class="control__button"><img src="/img/arrow-prev.png" alt=""></a>
-                                <a href="#" class="control__button"><img src="/img/arrow-next.png" alt=""></a>
+                                <a href="#" class="control__button prev-btn"><img src="/img/arrow-prev.png" alt=""></a>
+                                <a href="#" class="control__button next-btn"><img src="/img/arrow-next.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -288,5 +290,6 @@
             </div>
         </footer>
     </div>
+    <script src="dest/main.js"></script>
 </body>
 </html>

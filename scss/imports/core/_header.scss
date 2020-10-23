@@ -1,12 +1,14 @@
 header{                       
 	position: fixed;
-	background-color: black;
+	// background-color: rgba(0,0,0,0.5);
+	// background-color: black;
 	height: 100px;
 	z-index: 200;
 	width: 100%;
-	background-color: transparent;
+	
 	top:0;
 	left:0;
+	transition: .4s;
 	.container-fluid{                              
 		display:flex;
 		justify-content: space-between;
@@ -32,7 +34,7 @@ header{
 			width: 100%;
 			display:flex;
 			align-items: center;
-			label{
+			.btnCloseMenu{
 				display:none;
 				&:active{
 					span{
@@ -143,7 +145,7 @@ header{
 			.hamburger{
 				padding-left:10px;
 				display:none;
-				label{
+				.btnShowMenu{
 					height: 30px;
 					width: auto;
 					display: flex;
@@ -187,14 +189,31 @@ header{
 				height: 30%;       
 				position: relative;
 				cursor: pointer;
+				&::after{
+					position: absolute;
+					display:block;
+					content:"";
+					width: 50px;
+					height: 20px;
+					background:transparent;
+					top:20px;
+					left:-8px;
+
+				}
 				&:hover{
 					.header__lang-selection{
-						display:block;
+						// display:block;
 					}
 				}
 				.header__lang-selection{
+					&.showlangsection{
+						visibility: visible;
+						opacity: 1;
+						transition: .2s;
+					}
 					position: absolute;
-					display:none;
+					visibility: hidden;
+					opacity: 0;
 					top:110%;
 					left: 50%;
 					transform: translateX(-50%);
@@ -202,12 +221,13 @@ header{
 					height: auto;
 					background: white;
 					border-radius: 2px;
+					transition: .2s;
 					&::after{
 						display: block;
 						content:"";
 						border-width: 8px;
 						position: absolute;
-						top:-22%;
+						top:-16%;
 						right:50%;
 						transform: translateX(50%);
 						border-style: solid;
@@ -264,6 +284,9 @@ header{
 				transform: translateX(0%);
 			}
 			.header__navbar{
+				&.active{
+					transform: translateX(0%);
+				}
 				position: fixed;
 				top:0;
 				right:0;
@@ -275,7 +298,7 @@ header{
 				z-index: 200;
 				transition: 1s;
 				transition-delay: 0.3s;
-				label{
+				.btnCloseMenu{
 					top:0;
 					left:0;
 					position: absolute;
@@ -341,6 +364,7 @@ header{
 
 @include mobile{
 	header{
+		height: 80px;
 		.container-fluid{
 			#showmenu:checked ~ .header__navbar{
 				transform: translateX(0%);
@@ -357,7 +381,7 @@ header{
 				z-index: 200;
 				transition: 1s;
 				transition-delay: 0.3s;
-				label{
+				.btnCloseMenu{
 					top:0;
 					left:0;
 					position: absolute;

@@ -5,6 +5,7 @@ main{
         position: relative;
         // width: 100%;
         max-height: 832px;
+        height: 100vh;
         overflow: hidden;
         // height: 832px;
         .slider__list{      
@@ -12,28 +13,40 @@ main{
             width: 100%;
             height: 100%;          
             .slider__item{
-                display:flex;
+                display:none;
                 justify-content: center;
                 align-items: center;
                 position: relative;
+                height: 100%;
+                transition: .5s;
+                &.active{
+                    display:flex;
+                    
+                    transition: .5s;
+                }
                 .slider__item-img{
-                    height:100vh;
+                    height:100%;
                     width: 100%;
                     margin:auto;
                     display:block;
+                    object-fit: cover;
                 }
                 .text{
                     position: absolute;                            
                     display:flex;
                     justify-content: center;
                     align-items: center;
-                    flex-direction: column;                        
+                    flex-direction: column;           
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);             
                     h2{
                         font-size: 83.33px;
                         letter-spacing: 0.2em;
                         line-height: 83.3px;
                         color:#bea67c;
                         font-weight: bold;
+                        text-align: center;
                     }
                     a{
                         font-size:14px;
@@ -129,10 +142,15 @@ main{
                                 background: #6E6E6E;
                                 margin:0 3px;
                                 cursor: pointer;
-                                &:nth-child(1)
-                                {
+                                transition: .5s;
+                                &.active{
                                     background:#bea67c;
+                                    transition: .5s;
                                 }
+                                // &:nth-child(1)
+                                // {
+                                //     background:#bea67c;
+                                // }
                             }
                         }
                     }
@@ -161,6 +179,7 @@ main{
                         height: 42px;
                         border:1px solid white;
                         transition:all .4s;
+                        cursor: pointer;
                         &:hover{
                             background-color: #bea67c;
                         }
@@ -191,7 +210,7 @@ main{
                     &:hover{
                         
                         img{
-                            transform:scale(1.1);
+                            transform:scale(1.05);
                             filter: grayscale(100%);
                         }
                     }
@@ -201,7 +220,7 @@ main{
                         display: block;
                         width: 100%;
                         
-                        transition:transform 0.6s linear
+                        transition:transform 1s linear;
                     }
                 }
                 a{
@@ -348,6 +367,7 @@ main{
                             justify-content: center;
                             align-items: center;
                             position: relative;
+                            -webkit-tap-highlight-color: transparent;
                             &::after{
                                 position: absolute;
                                 content:"";
@@ -849,7 +869,7 @@ main{
                             letter-spacing: 0.1em;
                         }
                         a{
-                            line-height: 50px;
+                            line-height: 47px;
                             padding: 0 25px;
                             margin-top:30px;
                             img{
@@ -865,7 +885,7 @@ main{
                     .paging{
                         margin-left:0;
                         .number{
-                            font-size: 42px;
+                            font-size: 40px;
                             &::after{
                                 display: none;
                             }
@@ -874,8 +894,8 @@ main{
                             ul{
                                 padding-left: 5px;
                                 li{
-                                    width: 10px;
-                                    height: 10px;
+                                    width: 9px;
+                                    height: 9px;
                                 }
                             }
                         }
@@ -899,7 +919,7 @@ main{
                 flex-direction: column;
                 align-items: center;
                 h2{
-                    font-size: 38px;
+                   
                     width: 100%;
                     text-align: center;
                 }
@@ -919,7 +939,7 @@ main{
                 width: 100%;
                 .textbox{
                     h2{
-                        font-size: 40px;
+                        font-size: 38px;
                         line-height: 55px;
                         width: 100%;
                         &::after{
@@ -1045,6 +1065,10 @@ main{
                     .news__item{
                         width: 100%;
                         margin-bottom:40px;
+                        &:nth-child(3)
+                        {
+                            margin-bottom:0;
+                        }
                         img{
 
                         }
