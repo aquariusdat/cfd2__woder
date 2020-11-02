@@ -106,3 +106,78 @@
         }
     }
 }
+.pop-video{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 201;
+    &.active{
+        display:flex;
+    }
+    .wrap{
+        position: relative;
+        background-color: white;
+        padding:10px;
+        border-radius: 10px;
+        iframe{
+            border-radius: 10px;
+        }
+    }
+    .close{
+        font-size: 25px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top:-25px;
+        right:-25px;
+        background-color: rgba(0,0,0,0.8);
+        border:1px solid #fff;
+        border-radius: 50%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        span{
+            &:nth-child(1)
+            {
+                content:"";
+                position: absolute;
+                transform: rotateZ(45deg);
+                width: 20px;
+                height: 2px;
+                background-color: #fff;
+                transition: .4s;
+            }
+            &:nth-child(2)
+            {
+                content:"";
+                position: absolute;
+                transform: rotateZ(135deg);
+                width: 20px;
+                height: 2px;
+                background-color: #fff;
+                transition: .4s;
+            }
+        }
+        &:hover{
+            span{
+                &:nth-child(1)
+            {
+                transform: rotateZ(135deg);
+                transition: .4s;
+            }
+            &:nth-child(2)
+            {
+                transform: rotateZ(45deg);
+                transition: .4s;
+            }
+            }
+        }
+    }
+}

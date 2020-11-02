@@ -81,7 +81,10 @@ header{
 				height: 100%;
 				
 				li{                            
-					height: 100%;                            
+					height: 100%;   
+					&.gray{
+						color:rgba(0,0,0,0.2);
+					}                         
 					a{
 						padding: 0 25px;
 						font-size: 15px;
@@ -97,7 +100,18 @@ header{
 						transition: color .4s linear;
 						position: relative;
 						overflow: hidden;
-					   
+						&.gray{
+							color:rgba(0,0,0,0.2);
+						}
+						&.active{
+							&::after{
+								width: 100%;
+							}
+							&::before{
+								width: 100%;
+							}
+						}
+
 						&:hover{
 							&::after{
 								width: 100%;
@@ -124,7 +138,7 @@ header{
 							position: absolute;
 							width: 0%;
 							background-color: #bea67c;
-							height: 1px;
+							height: 2px;
 							bottom:30%;
 							right:0;
 							transition: all .4s cubic-bezier(.68,.19,.02,.63);
@@ -366,9 +380,9 @@ header{
 	header{
 		height: 80px;
 		.container-fluid{
-			#showmenu:checked ~ .header__navbar{
-				transform: translateX(0%);
-			}
+			// #showmenu:checked ~ .header__navbar{
+			// 	transform: translateX(0%);
+			// }
 			.header__navbar{
 				position: fixed;
 				top:0;

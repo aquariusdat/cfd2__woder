@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header id="header">
+        <header id="header" style="background-color: rgba(0,0,0,0.8);">
             <div class="container-fluid">
                 <div class="header__logo">
                     <a href="#" class="header__logo-link">
@@ -36,19 +36,19 @@
                 <div class="header__navbar">
                     <ul class="header__list">
                         <li class="">
-                            <a href="#" class="">HOME</a>
+                            <a href="#slider" class="active" data-section=".slider">HOME</a>
                         </li>
                         <li class="">
-                            <a href="#" class="">PRODUCTS</a>
+                            <a href="#product" class="" data-section=".product">PRODUCTS</a>
                         </li>
                         <li class="">
-                            <a href="#" class="">ABOUT</a>
+                            <a href="#aboutus" class="" data-section=".aboutus">ABOUT</a>
                         </li>
                         <li class="">
-                            <a href="#" class="">GALLERY</a>
+                            <a href="#gallery" class="" data-section=".gallery">GALLERY</a>
                         </li> 
                         <li class="">
-                            <a href="#" class="">NEWS</a>
+                            <a href="#news" class="" data-section=".news">NEWS</a>
                         </li>         
                     </ul>
                     <div class="btnCloseMenu">
@@ -88,23 +88,23 @@
             </div>
         </header>
         <main>
-                <div class="slider">
+                <div class="slider" id="slider">
                     <div class="slider__list">
-                        <div class="slider__item active">
+                        <div class="slider__item carousel-cell active">
                             <img class="slider__item-img" src="/img/slider1.jpg" alt="">
                             <div class="text">
                                 <h2>WOODER</h2>
                                 <a href="#"><span>LEARN MORE</span> <img src="/img/arrow-leanmore.png" alt=""></a>
                             </div>
                         </div>
-                        <div class="slider__item">
+                        <div class="slider__item carousel-cell active">
                             <img class="slider__item-img" src="/img/slider1.jpg" alt="">
                             <div class="text">
                                 <h2>WOODER 2</h2>
                                 <a href="#"><span>LEARN MORE</span> <img src="/img/arrow-leanmore.png" alt=""></a>
                             </div>
                         </div>
-                        <div class="slider__item">
+                        <div class="slider__item carousel-cell active">
                             <img class="slider__item-img" src="/img/slider1.jpg" alt="">
                             <div class="text">
                                 <h2>WOODER 3</h2>
@@ -120,11 +120,11 @@
                                     01
                                 </p>
                                 <div class="dot">
-                                    <ul>
+                                    <ol>
                                         <li class="active"></li>
                                         <li></li>
                                         <li></li>
-                                    </ul>
+                                    </ol>
                                 </div>
                             </div>
                             <div class="scroll">                                
@@ -139,7 +139,7 @@
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product" id="product">
                     <div class="container">
                         <div class="product__item">
                             <div class="content textbox">
@@ -175,6 +175,7 @@
                                 <div class="item__wrapper-img"> 
                                     <div>
                                         <img src="/img/video1.jpg" alt="">
+                                        <span></span>
                                     </div>                                    
                                 </div>                                
                                 <p>Innovative Design</p>                            
@@ -183,6 +184,7 @@
                                 <div class="item__wrapper-img">
                                     <div>
                                         <img src="/img/video2.jpg" alt="">
+                                        <span></span>
                                     </div>                                    
                                 </div>                                
                                 <p>High-level Skills</p>                            
@@ -191,6 +193,7 @@
                                 <div class="item__wrapper-img">
                                     <div>
                                         <img src="/img/video3.jpg" alt="">
+                                        <span></span>
                                     </div>                                    
                                 </div>                                
                                 <p>Quality Products</p>                            
@@ -209,7 +212,7 @@
                     </div>
                 </div>
 
-                <div class="aboutus">
+                <div class="aboutus" id="aboutus">
                     <div class="container">
                         <div class="img"><img src="/img/background2.jpg" alt=""></div>
                         <div class="content textbox">
@@ -220,7 +223,7 @@
                     </div>
                 </div>
 
-                <div class="gallery">
+                <div class="gallery" id="gallery">
                     <div class="container">
                         <div class="content textbox">
                             <h2>GALLERY</h2>
@@ -247,7 +250,7 @@
                     </div>
                 </div>
 
-                <div class="news">
+                <div class="news" id="news">
                     <div class="container">
                         <div class="content textbox">
                             <h2>NEWS</h2>
@@ -289,7 +292,16 @@
                 <a href="#" class="backtotop">BACK TO TOP</a>
             </div>
         </footer>
-    </div>
+        <div class="pop-video">
+            <div class="wrap">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/m3-XMgCZd0M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="close"><span></span> <span></span></div>
+            </div>
+        </div>
+    </div>  
+
+    <script src="dest/jquery-3.5.1.min.js"></script>
+    <script src="dest/jsmain.min.js"></script>
     <script src="dest/main.js"></script>
 </body>
 </html>
