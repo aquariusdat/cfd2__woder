@@ -67,6 +67,7 @@ table {
   -moz-appearance: none;
   -webkit-appearance: none;
   font-family: 'Proxima Nova';
+  scroll-behavior: smooth;
 }
 
 body {
@@ -2467,6 +2468,10 @@ header .container-fluid .header__navbar .header__list li {
   height: 100%;
 }
 
+header .container-fluid .header__navbar .header__list li.gray {
+  color: rgba(0, 0, 0, 0.2);
+}
+
 header .container-fluid .header__navbar .header__list li a {
   padding: 0 25px;
   font-size: 15px;
@@ -2487,6 +2492,18 @@ header .container-fluid .header__navbar .header__list li a {
   transition: color .4s linear;
   position: relative;
   overflow: hidden;
+}
+
+header .container-fluid .header__navbar .header__list li a.gray {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+header .container-fluid .header__navbar .header__list li a.active::after {
+  width: 100%;
+}
+
+header .container-fluid .header__navbar .header__list li a.active::before {
+  width: 100%;
 }
 
 header .container-fluid .header__navbar .header__list li a:hover::after {
@@ -2516,7 +2533,7 @@ header .container-fluid .header__navbar .header__list li a::before {
   position: absolute;
   width: 0%;
   background-color: #bea67c;
-  height: 1px;
+  height: 2px;
   bottom: 30%;
   right: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.68, 0.19, 0.02, 0.63);
@@ -2786,10 +2803,6 @@ header .container-fluid .header__lang .header__lang-current i img {
 @media screen and (min-width: 320px) and (max-width: 768px) {
   header {
     height: 80px;
-  }
-  header .container-fluid #showmenu:checked ~ .header__navbar {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
   }
   header .container-fluid .header__navbar {
     position: fixed;
@@ -3065,8 +3078,17 @@ main .slider .slider__list {
   height: 100%;
 }
 
+main .slider .slider__list .carousel-cell {
+  width: 100%;
+  /* full width */
+  height: 100%;
+  /* height of carousel */
+}
+
 main .slider .slider__list .slider__item {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3075,16 +3097,7 @@ main .slider .slider__list .slider__item {
           align-items: center;
   position: relative;
   height: 100%;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-main .slider .slider__list .slider__item.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition: .5s;
-  transition: .5s;
+  width: 100%;
 }
 
 main .slider .slider__list .slider__item .slider__item-img {
@@ -3218,7 +3231,7 @@ main .slider .slider__bottom .container-fluid .paging .number::after {
   border-width: 2px;
   border-color: #bea67c;
   width: 42px;
-  left: -40%;
+  left: -100%;
   top: 45%;
   position: absolute;
   background: #bea67c;
@@ -3233,7 +3246,7 @@ main .slider .slider__bottom .container-fluid .paging .dot {
           align-items: center;
 }
 
-main .slider .slider__bottom .container-fluid .paging .dot ul {
+main .slider .slider__bottom .container-fluid .paging .dot ol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3243,7 +3256,7 @@ main .slider .slider__bottom .container-fluid .paging .dot ul {
   padding-left: 15px;
 }
 
-main .slider .slider__bottom .container-fluid .paging .dot ul li {
+main .slider .slider__bottom .container-fluid .paging .dot ol li {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -3254,7 +3267,7 @@ main .slider .slider__bottom .container-fluid .paging .dot ul li {
   transition: .5s;
 }
 
-main .slider .slider__bottom .container-fluid .paging .dot ul li.active {
+main .slider .slider__bottom .container-fluid .paging .dot ol li.active {
   background: #bea67c;
   -webkit-transition: .5s;
   transition: .5s;
@@ -3539,7 +3552,7 @@ main .quality .container .quality__video .quality__video-item .item__wrapper-img
   cursor: pointer;
 }
 
-main .quality .container .quality__video .quality__video-item .item__wrapper-img div::before {
+main .quality .container .quality__video .quality__video-item .item__wrapper-img div span::before {
   position: absolute;
   content: "";
   display: block;
@@ -3549,8 +3562,10 @@ main .quality .container .quality__video .quality__video-item .item__wrapper-img
   border-color: transparent transparent transparent white;
   z-index: 1;
   cursor: pointer;
-  -webkit-transform: translateX(35%);
-          transform: translateX(35%);
+  -webkit-transform: translate(-20%, -50%);
+          transform: translate(-20%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 main .quality .container .quality__video .quality__video-item .item__wrapper-img div img {
@@ -3569,8 +3584,8 @@ main .quality .container .quality__video .quality__video-item p {
 
 main .wedo {
   margin-top: 90px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/img/background1.jpg) no-repeat center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/background1.jpg) no-repeat center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../img/background1.jpg) no-repeat center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/background1.jpg) no-repeat center;
   background-size: cover;
   height: 640px;
   position: relative;
@@ -3664,7 +3679,7 @@ main .wedo .container .content a::after {
 }
 
 main .aboutus {
-  margin: 100px 0;
+  padding: 100px 0;
 }
 
 main .aboutus .container {
@@ -3897,7 +3912,7 @@ main .carousel .carousel__list img {
     font-size: 40px;
   }
   main .slider .slider__bottom .container-fluid .paging .number::after {
-    left: -45%;
+    left: -80%;
   }
   main .slider .slider__bottom .container-fluid .paging .dot ul {
     padding-left: 5px;
